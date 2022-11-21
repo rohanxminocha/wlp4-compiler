@@ -10,7 +10,7 @@ For more information on WLP4, check out:
 
 ## WLP4 Compiler
 
-This WLP4 Compiler implements scanning, parsing, context sensitive analysis, and code generation of WLP4 Code. The overall project consists of building a compiler which is able to translate WLP4 code into MIPS assembly language. The source code for this project is not public, feel free to email me at rminocha@uwaterloo.ca<a href="rminocha@uwaterloo.ca"> to see it.
+This WLP4 Compiler implements scanning, parsing, context sensitive analysis, and code generation of WLP4 Code. The overall project consists of building a compiler which is able to translate WLP4 code into MIPS assembly language. The source code for this project is not public, feel free to email me at [rminocha@uwaterloo.ca](rminocha@uwaterloo.ca) to view the source code.
 
 ### Compiler Processes:
 
