@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function Help {
+    echo "Usage:"
+    echo "--c [test_file]"
+}
+
+function Compile {
+    cat $1 | ./wlp4scan | ./wlp4parse | ./wlp4gen > $1.asm
+}
+
+case $1 in
+    --help)
+    Help
+    ;;
+	
+	--c)
+    Compile "$2"
+    ;;
+	
+    *)
+    echo "Use --help for more information."
+    ;;
+esac

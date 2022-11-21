@@ -1,0 +1,305 @@
+start BOF procedures EOF
+BOF BOF
+procedures procedure procedures
+procedure INT ID LPAREN params RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+ID binsearch
+LPAREN (
+params paramlist
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID arr
+COMMA ,
+paramlist dcl COMMA paramlist
+dcl type ID
+type INT
+INT int
+ID size
+COMMA ,
+paramlist dcl
+dcl type ID
+type INT
+INT int
+ID target
+RPAREN )
+LBRACE {
+dcls dcls dcl BECOMES NUM SEMI
+dcls dcls dcl BECOMES NUM SEMI
+dcls dcls dcl BECOMES NUM SEMI
+dcls dcls dcl BECOMES NUM SEMI
+dcls
+dcl type ID
+type INT
+INT int
+ID i
+BECOMES =
+NUM 0
+SEMI ;
+dcl type ID
+type INT
+INT int
+ID large
+BECOMES =
+NUM 0
+SEMI ;
+dcl type ID
+type INT
+INT int
+ID small
+BECOMES =
+NUM 0
+SEMI ;
+dcl type ID
+type INT
+INT int
+ID mid
+BECOMES =
+NUM 0
+SEMI ;
+statements statements statement
+statements statements statement
+statements statements statement
+statements
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID i
+BECOMES =
+expr expr MINUS term
+expr term
+term factor
+factor NUM
+NUM 0
+MINUS -
+term factor
+factor NUM
+NUM 1
+SEMI ;
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID large
+BECOMES =
+expr expr MINUS term
+expr term
+term factor
+factor ID
+ID size
+MINUS -
+term factor
+factor NUM
+NUM 1
+SEMI ;
+statement WHILE LPAREN test RPAREN LBRACE statements RBRACE
+WHILE while
+LPAREN (
+test expr LE expr
+expr term
+term factor
+factor ID
+ID small
+LE <=
+expr term
+term factor
+factor ID
+ID large
+RPAREN )
+LBRACE {
+statements statements statement
+statements statements statement
+statements
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID mid
+BECOMES =
+expr term
+term term SLASH factor
+term factor
+factor LPAREN expr RPAREN
+LPAREN (
+expr expr PLUS term
+expr term
+term factor
+factor ID
+ID small
+PLUS +
+term factor
+factor ID
+ID large
+RPAREN )
+SLASH /
+factor NUM
+NUM 2
+SEMI ;
+statement IF LPAREN test RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE
+IF if
+LPAREN (
+test expr EQ expr
+expr term
+term factor
+factor STAR factor
+STAR *
+factor LPAREN expr RPAREN
+LPAREN (
+expr expr PLUS term
+expr term
+term factor
+factor ID
+ID arr
+PLUS +
+term factor
+factor ID
+ID mid
+RPAREN )
+EQ ==
+expr term
+term factor
+factor ID
+ID target
+RPAREN )
+LBRACE {
+statements statements statement
+statements statements statement
+statements
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID i
+BECOMES =
+expr term
+term factor
+factor ID
+ID mid
+SEMI ;
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID small
+BECOMES =
+expr term
+term factor
+factor ID
+ID size
+SEMI ;
+RBRACE }
+ELSE else
+LBRACE {
+statements statements statement
+statements
+statement IF LPAREN test RPAREN LBRACE statements RBRACE ELSE LBRACE statements RBRACE
+IF if
+LPAREN (
+test expr LT expr
+expr term
+term factor
+factor STAR factor
+STAR *
+factor LPAREN expr RPAREN
+LPAREN (
+expr expr PLUS term
+expr term
+term factor
+factor ID
+ID arr
+PLUS +
+term factor
+factor ID
+ID mid
+RPAREN )
+LT <
+expr term
+term factor
+factor ID
+ID target
+RPAREN )
+LBRACE {
+statements statements statement
+statements
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID small
+BECOMES =
+expr expr PLUS term
+expr term
+term factor
+factor ID
+ID mid
+PLUS +
+term factor
+factor NUM
+NUM 1
+SEMI ;
+RBRACE }
+ELSE else
+LBRACE {
+statements statements statement
+statements
+statement lvalue BECOMES expr SEMI
+lvalue ID
+ID large
+BECOMES =
+expr expr MINUS term
+expr term
+term factor
+factor ID
+ID mid
+MINUS -
+term factor
+factor NUM
+NUM 1
+SEMI ;
+RBRACE }
+RBRACE }
+RBRACE }
+RETURN return
+expr term
+term factor
+factor ID
+ID i
+SEMI ;
+RBRACE }
+procedures main
+main INT WAIN LPAREN dcl COMMA dcl RPAREN LBRACE dcls statements RETURN expr SEMI RBRACE
+INT int
+WAIN wain
+LPAREN (
+dcl type ID
+type INT STAR
+INT int
+STAR *
+ID a
+COMMA ,
+dcl type ID
+type INT
+INT int
+ID b
+RPAREN )
+LBRACE {
+dcls
+statements
+RETURN return
+expr term
+term factor
+factor ID LPAREN arglist RPAREN
+ID binsearch
+LPAREN (
+arglist expr COMMA arglist
+expr term
+term factor
+factor ID
+ID a
+COMMA ,
+arglist expr COMMA arglist
+expr term
+term factor
+factor ID
+ID b
+COMMA ,
+arglist expr
+expr term
+term factor
+factor NUM
+NUM 3
+RPAREN )
+SEMI ;
+RBRACE }
+EOF EOF
